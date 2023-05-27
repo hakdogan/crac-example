@@ -28,7 +28,7 @@ public class Greetings implements Resource
     public static void main(String[] args) throws InterruptedException {
 
         while (counter < 10){
-            System.out.println(String.format("%sth greetings from İstanbul", ++counter));
+            System.out.println(String.format("%sth greetings from Istanbul", ++counter));
             Thread.sleep(1000);
         }
 
