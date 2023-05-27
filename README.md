@@ -4,7 +4,7 @@ The [CRaC](https://openjdk.org/projects/crac/) is an `OpenJDK` project which pro
 
 This repository shows you how to create a checkpoint and restore from  it using CRaC.
 
-## Build and Run
+## Build and Run on Shell
 
 Details on finding and installing the current release can be found [here](https://github.com/CRaC/docs#jdk).
 ```shell
@@ -32,3 +32,17 @@ Killed
 java -XX:CRaCRestoreFrom=image
 Done...
 ```
+## With Docker
+
+```shell
+docker build -f ./.Dockerfile -t crac_example .
+```
+
+```shell
+docker run -it --privileged --rm --name crac_example crac_example
+/home/greetings# java -XX:CRaCCheckpointTo=image -jar greetings.jar
+
+#for restore
+/home/greetings# java -XX:CRaCRestoreFrom=image
+```
+
